@@ -1,0 +1,47 @@
+mkdir debugging-practise
+cd debugging-practise
+git init
+git status
+touch main.py
+python main.py
+git status
+git add -A
+git status
+git commit -m "first commit"
+git push -u https://github.com/sqrt676/python-debug-practise.git
+git push -u https://github.com/sqrt676/python-debug-practise.git
+git push -u https://github.com/sqrt676/python-debug-practise.git main
+git pull
+git pull remote main
+git pull -u origin  main
+git remote add origin https://github.com/sqrt676/python-debug-practise.git
+git status
+git pull
+git push -u origin main
+git pull main
+git branch 
+git branch -a
+git pull origin main
+git config pull.rebase false
+git pull origin main
+git config pull.rebase true
+git pull origin main
+git push -u origin main
+git push
+history > ~/zsh_history_backup.txt\
+
+history >> ~/zsh_history_backup.txt\
+
+fc -W\
+
+export HISTSIZE=10000\
+export SAVEHIST=10000\
+
+setopt INC_APPEND_HISTORY\
+
+export HIST_STAMPS="yyyy-mm-dd"\
+
+source ~/.zshrc\
+
+ls -la
+cat ~/.zsh_history\
