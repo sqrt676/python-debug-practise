@@ -1,71 +1,17 @@
-import math
-from typing import List
+''' Main block to execute a module by creating object'''
+# Here I am trying to make an entry script
 
-class Calculator:
-    def __init__(self):
-        self.result = 0
-    
-    def add(self, value: float):
-        if not isinstance(value, (int, float)):
-            raise ValueError("Value must be a number.")
-        self.result += value
-    
-    def subtract(self, value: float):
-        if not isinstance(value, (int, float)):
-            raise ValueError("Value must be a number.")
-        self.result -= value
-    
-    def multiply(self, value: float):
-        if not isinstance(value, (int, float)):
-            raise ValueError("Value must be a number.")
-        self.result *= value
-    
-    def divide(self, value: float):
-        if not isinstance(value, (int, float)):
-            raise ValueError("Value must be a number.")
-        if value == 0:
-            raise ValueError("Cannot divide by zero.")
-        self.result /= value
-    
-    def sqrt(self):
-        if self.result < 0:
-            raise ValueError("Cannot take the square root of a negative number.")
-        self.result = math.sqrt(self.result)
-    
-    def clear(self):
-        self.result = 0
-    
-    def __str__(self):
-        return f"Current result: {self.result}"
-
-def perform_operations(calculator: Calculator, operations: List[str], values: List[float]):
-    for operation, value in zip(operations, values):
-        if operation == 'add':
-            calculator.add(value)
-        elif operation == 'subtract':
-            calculator.subtract(value)
-        elif operation == 'multiply':
-            calculator.multiply(value)
-        elif operation == 'divide':
-            calculator.divide(value)
-        elif operation == 'sqrt':
-            calculator.sqrt()
-        elif operation == 'clear':
-            calculator.clear()
-        else:
-            raise ValueError(f"Unknown operation: {operation}")
+from calc.calculator import BasicCalculator
+from calc.calculator import ComplexCalculator
 
 def main():
-    calc = Calculator()
-    operations = ['add', 'multiply', 'subtract', 'divide', 'sqrt', 'clear']
-    values = [10, 5, 2, 0, 4, 1]
+    '''main block of entry script'''
+    calculator_object = BasicCalculator()
+    complex_object = ComplexCalculator()
+    result = calculator_object.add(5,10)
+    result2 = complex_object.max_in_list([1,2,3])
+    print(f"The result of the addition is: {result} and list Op is {result2}")
 
-    try:
-        perform_operations(calc, operations, values)
-    except ValueError as e:
-        print(f"Error: {e}")
-    
-    print(calc)
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
+    
